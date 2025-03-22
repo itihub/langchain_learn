@@ -1,0 +1,7 @@
+# 声明类型
+_type: prompt
+# 声明输入变量
+input_variables: ['name', 'what']
+# 声明模板
+template: |
+  给我讲一个关于{name}的{what}故事

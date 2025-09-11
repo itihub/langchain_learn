@@ -1,0 +1,29 @@
+[build-system]
+# 定义构建项目所需的后端工具及其版本
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[project]
+name = "langchain_learn"
+version = "0.1.0"
+
+[tool.ruff]
+line-length = 88
+exclude = [
+    ".git",
+    "__pycache__",
+    "build",
+    "dist",
+    "venv",
+    ".venv",
+    ".vscode",
+]
+
+[tool.ruff.lint]
+select = ["E", "W", "F"]
+ignore = ["E203", "F821"]
+
+[tool.ruff.format]
+quote-style = "double"
+
+

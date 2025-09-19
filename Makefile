@@ -5,6 +5,8 @@ SHELL := /bin/bash
 VENV_DIR = .venv
 REQUIREMENTS_FILE = requirements.txt
 REQUIREMENTS_DEV_FILE = requirements-dev.txt
+ENV_FILE := .env
+ENV_EXAMPLE_FILE := .env.example
 
 # 特殊声明，用于告诉 make，all 和 setup 是伪目标（phony targets）
 .PHONY: all setup create_venv install_deps install_dev_deps clean
@@ -64,3 +66,23 @@ clean:
 	  rm -rf "$(VENV_DIR)"; \
 	fi
 	@echo "--- Virtual environment removed."
+
+# sensitive: 将所有键的 value 进行脱敏并生成 .env.example
+sensitive:
+	@echo "正在脱敏并生成 $(ENV_EXAMPLE_FILE)..."
+	@if [ ! -f $(ENV_FILE) ]; then \
+		echo "$(ENV_FILE) 文件不存在，无法生成 $(ENV_EXAMPLE_FILE)。" >&2; \
+		exit 1; \
+	fi
+	@sed -E '/^#/!s/^(.*=).*/\1.../' $(ENV_FILE) > $(ENV_EXAMPLE_FILE)
+	@echo "✅ 完成：$(ENV_EXAMPLE_FILE) 已生成。"
+
+# copy-env: 复制 .env.example 为 .env 文件
+copy-env:
+	@echo "正在复制 $(ENV_EXAMPLE_FILE) 为 $(ENV_FILE)..."
+	@if [ ! -f $(ENV_EXAMPLE_FILE) ]; then \
+		echo "$(ENV_EXAMPLE_FILE) 文件不存在，无法复制。" >&2; \
+		exit 1; \
+	fi
+	@cp $(ENV_EXAMPLE_FILE) $(ENV_FILE)
+	@echo "✅ 完成：$(ENV_FILE) 已生成。"

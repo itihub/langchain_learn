@@ -1,0 +1,36 @@
+code_task:
+  description: >
+    你将使用Python的Pygame框架创建一个游戏，以下是指令:
+
+    指令
+    -----------
+    {game}
+  expected_output: >
+    你的最终答案必须是完整的Python代码，仅包含Python代码，不包含其他内容。
+
+review_task:
+  description: >
+    你将使用Python的Pygame框架创建一个游戏，以下是指令:
+
+    指令
+    ------------
+    {game}
+
+    使用你得到的代码，检查错误。检查逻辑错误、
+    语法错误、缺少的导入、变量声明、括号不匹配
+    以及安全漏洞。
+  expected_output: >
+    你的最终答案必须是完整的Python代码，仅包含Python代码，不包含其他内容。
+
+evaluate_task:
+  description: >
+    你正在帮助使用Pytha的Pygame框架创建一个游戏，以下是指令:
+    
+    指令
+    ------------
+    {game}
+    
+    你将检查代码，确保它是完整的且
+    能够完成它应该完成的工作。
+  expected_output: >
+    你的最终答案必须是完整的Python代码，仅包含Python代码，不包含其他内容

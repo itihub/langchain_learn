@@ -1,0 +1,37 @@
+research_task:
+  description: >
+    在{customer_domain}的背景下对客户和竞争对手进行彻底研究。
+    确保你找到任何有趣且相关的信息，考虑到当前年份是2024年。
+    我们正与他们合作以下项目:{project_description}。
+  expected_output: >
+    关于客户及其客户和竞争对手的完整报告，
+    包括他们的人口统计、偏好、市场定位和受众参与度。
+
+project_understanding_task:
+  description: >
+    了解{project_description}的项目细节和目标受众。
+    审查任何提供的材料邦根据需要收集额外信息。
+  expected_output: >
+    项目的详细摘要和目标受众的概况。
+
+marketing_strategy_task:
+  description: >
+    为客户{customer_domain}的项目{project_description}制定全面的营销策略。
+    利用研究任务和项目理解任务的见解创建高质量策略。
+  expected_output: >
+    详细的营销策略文档，概述目标、目标受众、关键信息和建议的战术,
+    确保包含名称、战术、渠道和关键绩效指标(KPI)。
+
+campaign_idea_task:
+  description: >
+    为{project description}开发创意营销活动想法。
+    确保这些想法具有创新性、吸引力，并与整体营销策略保持一致。
+  expected_output: >
+    5个营销活动创意列表，每个都有简短描述和预期影响。
+
+copy_creation_task:
+  description: >
+    基于已批准的{project_description}营销活动创意创建营销文案。
+    确保文案引人注目、清晰明了，并针对目标受众量身定制。
+  expected_output: >
+    使用中文，为每个营销活动创意提供营销文案。
